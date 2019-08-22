@@ -43,7 +43,7 @@ dependencies {
 war.baseName = 'byeWorld'
 
 // Tomacat ;)
-project.webAppDirName = 'src/main/webapp'
+project.webAppDirName = 'src\\main\\webapp'
 // project.webAppDir     = '${project.projectDir}/${project.webAppDirName}' is read-only, so you cant change it
 
 tomcatRun.contextPath = '/'
