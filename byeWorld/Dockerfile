@@ -16,7 +16,7 @@ RUN gradle war
 FROM tomcat:9.0.24-jdk8-openjdk-slim
 
 ENV CATALINA_HOME /usr/local/tomcat
-WORKDIR /usr/local/tomcat
+WORKDIR ${CATALINA_HOME}
 
 COPY --from=gradle /home/gradle/tomacat/byeWorld/build/libs webapps/
 
