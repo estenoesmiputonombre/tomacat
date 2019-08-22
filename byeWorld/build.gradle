@@ -1,0 +1,54 @@
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.5'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'com.bmuschko.tomcat'
+
+sourceCompatibility = 1.8
+
+version = '1.0-SNAPSHOT'
+
+sourceSets {
+    src {
+        main {
+            'java'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    def tomcatVersion = '9.0.24'
+
+    // https://mvnrepository.com/artifact/org.apache.tomcat.embed/tomcat-embed-core
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-core', version: "${tomcatVersion}"
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-logging-juli', version: "9.0.0.M6"
+    compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: "${tomcatVersion}"
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+}
+
+war.baseName = 'byeWorld'
+
+// Tomacat ;)
+project.webAppDirName = 'src/main/webapp'
+// project.webAppDir     = '${project.projectDir}/${project.webAppDirName}' is read-only, so you cant change it
+
+tomcatRun.contextPath = '/'
+tomcatRunWar.contextPath = '/'
+
+task echo {
+    println "WebAappDirName: ${project.webAppDirName}\nWebAppDir:${project.projectDir}/${project.webAppDirName}"
+}

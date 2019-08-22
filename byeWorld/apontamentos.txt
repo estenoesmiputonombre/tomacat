@@ -1,0 +1,16 @@
+
+apply plugin: 'war'
+
+war depends on compile
+
+assemble dependes on war
+
+classes <- war <- assemble
+
+"War plugin adds two dependency configurations:"
+
+-> providedCompile
+
+-> providedRuntime
+      ^
+These | are the same than *compile* and *runtime*, but they are not added to WAR archive
