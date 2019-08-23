@@ -5,12 +5,21 @@
     
     <modelVersion>4.0.0</modelVersion>
 
-    <name>Say hello body</name>
     <groupId>org.say.hello.world</groupId>
     <artifactId>helloworld</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>war</packaging>
+    <name>SayHelloWorld</name>
     <description>This is about to say hello in a simple page</description>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.20-SNAPSHOT</version>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
