@@ -6,7 +6,7 @@
 
    <servlet>
       <servlet-name>PitasServlet</servlet-name>
-      <servlet-class>pckg.pServlet</servlet-class>
+      <servlet-class>pckg.RestLess</servlet-class>
    </servlet>
  
    
