@@ -1,0 +1,12 @@
+
+FROM gradle:latest
+
+WORKDIR /home/gradle/tomacat/byeWorld
+
+COPY . .
+
+RUN gradle war
+
+EXPOSE 8080
+
+CMD ["/bin/sh", "-c", "gradle appStart" ]

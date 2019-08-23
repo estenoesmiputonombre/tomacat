@@ -1,0 +1,11 @@
+
+FROM maven:3.6.1-jdk-8-slim
+
+WORKDIR /tomacat/byeWorld
+COPY . .
+
+RUN mvn clean install
+
+EXPOSE 8080
+
+CMD ["/bin/sh", "-c", "mvn tomcat7:run"]
